@@ -1,0 +1,92 @@
+body {
+  font-family: 'Poppins';
+  background-color: #f9f4ef;
+  margin: 0;
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  color: #5d4037;
+  margin-bottom: 24px;
+}
+
+.container {
+  max-width: 900px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px 12px;
+  margin: 0 auto;
+}
+
+.card {
+  flex: 1 1 calc(100% - 40px);
+  max-width: 30%;
+  height: 144px;
+  perspective: 1000px;
+  cursor: pointer;
+  position: relative;
+}
+
+.inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+}
+
+.card.flip .inner {
+  transform: rotateY(180deg);
+}
+
+.front, .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  box-sizing: border-box;
+  box-shadow: 0 4px 12px rgba(0, 0, 0.1, 0.1);
+  font-size: 14px;
+}
+
+.front {
+  background-color: #fff3e0;
+  color: #6d4c41;
+  font-weight: bold;
+}
+
+.back {
+  background-color: #6d4c41;
+  color: #fff3e0;
+  transform: rotateY(180deg);
+  font-weight: medium;
+}
+
+.filter button {
+  margin: 0 4px;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 20px;
+  background-color: #d7ccc8;
+  color: #3e2723;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  margin-bottom: 20px;
+}
+
+.filter button:hover {
+  background-color: #a1918c;
+}
+
+.filter button.active {
+  background-color: #6B4F3A; 
+  color: #fff;         
+  font-weight: bold;
+}
